@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:TareaMVVM.ViewModels"
+             x:Class="TareaMVVM.Views.Empleados" Title="Nuevo Empleado">
+
+    <ContentPage.BindingContext>
+        <vm:EmpleadosViewModels />
+    </ContentPage.BindingContext>
+
+    
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="20"
+              RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,21,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto">
+            
+            <Label Grid.Row="2" Text="Nombre" HorizontalOptions="FillAndExpand" TextColor="#202020"></Label>
+            <Entry Grid.Row="3" HorizontalTextAlignment="Start" HeightRequest="50" Text="{Binding Nombre}" ReturnType="Next" />
+
+            <Label Grid.Row="4" Text="Apellido"  HorizontalOptions="FillAndExpand" TextColor="#202020"></Label>
+            <Entry Grid.Row="5" HorizontalTextAlignment="Start" HeightRequest="50" Text="{Binding Apellido}"/>
+
+            <Label Grid.Row="6" Text="Edad" HorizontalOptions="FillAndExpand" TextColor="#202020"></Label>
+            <Entry Grid.Row="7" HorizontalTextAlignment="Start" HeightRequest="50" Keyboard="Telephone" Text="{Binding Edad}" />
+
+            <Label Grid.Row="8" Text="Direccion" HorizontalOptions="FillAndExpand" TextColor="#202020"></Label>
+            <Entry Grid.Row="9" HorizontalTextAlignment="Start" HeightRequest="50"  Text="{Binding Direccion}" />
+
+            <Label Grid.Row="10" Text="puesto" HorizontalOptions="FillAndExpand" TextColor="#202020"></Label>
+            <Entry Grid.Row="11" HorizontalTextAlignment="Start" HeightRequest="50" Text="{Binding Puesto}" />
+
+            <Button Grid.Row="12" Margin="0,30,0,20" HeightRequest="50"  CornerRadius="20" 
+                    Text="Guardar"  BackgroundColor="#202020" TextColor="White" Command="{Binding CommandGuardar}"/>
+
+            <Button Grid.Row="13" Margin="0,0,0,0" HeightRequest="50"  CornerRadius="20" 
+                    Text="Ver Registro"  BackgroundColor="#202020" TextColor="White" Command="{Binding CommandListar}" />
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

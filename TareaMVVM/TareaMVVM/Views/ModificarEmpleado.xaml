@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:vm="clr-namespace:TareaMVVM.ViewModels"
+             x:Class="TareaMVVM.Views.ModificarEmpleado"
+             Title="Modificar Empleado">
+
+    <ContentPage.BindingContext>
+        <vm:EmpleadosViewModels />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+          <ScrollView>
+            <StackLayout>
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="20">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    
+                    <Label Grid.Row="1" Text="ID" HorizontalOptions="FillAndExpand" TextColor="#202020"></Label>
+                    <Entry Grid.Row="2" HorizontalTextAlignment="Start" HeightRequest="50" Text="{Binding ID}" IsReadOnly="True" />
+
+                    <Label Grid.Row="3" Text="Nombre" HorizontalOptions="FillAndExpand" TextColor="#202020"></Label>
+                    <Entry Grid.Row="4" HorizontalTextAlignment="Start" HeightRequest="50" Text="{Binding Nombre}" ReturnType="Next" />
+
+                    <Label Grid.Row="5" Text="Apellido"  HorizontalOptions="FillAndExpand" TextColor="#202020"></Label>
+                    <Entry Grid.Row="6" HorizontalTextAlignment="Start" HeightRequest="50" Text="{Binding Apellido}"/>
+
+                    <Label Grid.Row="7" Text="Edad" HorizontalOptions="FillAndExpand" TextColor="#202020"></Label>
+                    <Entry Grid.Row="8" HorizontalTextAlignment="Start" HeightRequest="50" Keyboard="Telephone" Text="{Binding Edad}" />
+
+                    <Label Grid.Row="9" Text="Direccion" HorizontalOptions="FillAndExpand" TextColor="#202020"></Label>
+                    <Entry Grid.Row="10" HorizontalTextAlignment="Start" HeightRequest="50"  Text="{Binding Direccion}" MaxLength="13" />
+
+                    <Label Grid.Row="11" Text="puesto" HorizontalOptions="FillAndExpand" TextColor="#202020"></Label>
+                    <Entry Grid.Row="12" HorizontalTextAlignment="Start" HeightRequest="50" Text="{Binding Puesto}" MaxLength="13" />
+
+                    <Button Grid.Row="13" Margin="0,0,0,5" HeightRequest="50"  CornerRadius="20" 
+                    Text="Modificar"  BackgroundColor="#202020" TextColor="White" Command="{Binding CommandModificar}"/>
+
+                    <Button Grid.Row="14" Margin="0,0,0,0" HeightRequest="50"  CornerRadius="20" 
+                    Text="Eliminar"  BackgroundColor="#202020" TextColor="White" Command="{Binding CommandEliminar}" />
+
+                </Grid>
+            </StackLayout>
+
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
